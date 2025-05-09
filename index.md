@@ -2,4 +2,4 @@
 
 # [1. DevOps Project Deployment Steps](DevOps_Project_README.md)
 
-# [2. Simple Web Application](indexpage.md)
+# [2. Simple Web Application](indexpage.hmtl)

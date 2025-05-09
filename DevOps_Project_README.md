@@ -1,5 +1,4 @@
-
-# 🚀 DevOps Project: Deploy a Secure Web Page on AWS EC2 with Apache, Route 53, and SSL
+# DevOps Project: Deploy a Secure Web Page on AWS EC2 with Apache, Route 53, and SSL
 
 This guide walks you through deploying a simple website on an AWS EC2 instance using:
 
@@ -11,7 +10,7 @@ This guide walks you through deploying a simple website on an AWS EC2 instance u
 
 ---
 
-## 🔧 Prerequisites
+## Prerequisites
 
 - AWS account
 - Namecheap domain
@@ -21,7 +20,7 @@ This guide walks you through deploying a simple website on an AWS EC2 instance u
 
 ---
 
-## 🖥️ Step 1: Launch an EC2 Instance
+## Step 1: Launch an EC2 Instance
 
 1. Open AWS Console → EC2 → Launch instance
 2. Choose:
@@ -36,7 +35,7 @@ This guide walks you through deploying a simple website on an AWS EC2 instance u
 
 ---
 
-## 🔑 Step 2: Connect to EC2 via SSH
+## Step 2: Connect to EC2 via SSH
 
 ```bash
 ssh -i /path/to/your-key.pem ubuntu@your-ec2-public-ip
@@ -44,7 +43,7 @@ ssh -i /path/to/your-key.pem ubuntu@your-ec2-public-ip
 
 ---
 
-## 🌐 Step 3: Install Apache Web Server
+## Step 3: Install Apache Web Server
 
 ```bash
 sudo apt update -y
@@ -61,7 +60,7 @@ http://your-ec2-public-ip
 
 ---
 
-## 🌍 Step 4: Configure Domain with Route 53 and Namecheap
+## Step 4: Configure Domain with Route 53 and Namecheap
 
 ### A. Create Hosted Zone in Route 53
 
@@ -89,7 +88,7 @@ http://yourdomain.com
 
 ---
 
-## 📤 Step 5: Upload Custom HTML Page
+## Step 5: Upload Custom HTML Page
 
 From your local machine:
 
@@ -105,7 +104,7 @@ sudo mv /tmp/index.html /var/www/html/index.html
 
 ---
 
-## 🔒 Step 6: Secure Your Site with HTTPS using Certbot
+## Step 6: Secure Your Site with HTTPS using Certbot
 
 ### A. Install Certbot
 
@@ -120,7 +119,8 @@ sudo apt install certbot python3-certbot-apache -y
 sudo certbot --apache
 ```
 
-Follow prompts to:
+Follow the certbot prompts to:
+
 - Enter email
 - Agree to terms
 - Choose your domain
@@ -133,7 +133,7 @@ https://yourdomain.com
 
 ---
 
-## 🔁 (Optional) Step 7: Test Auto-Renewal
+## Step 7: Test Auto-Renewal
 
 ```bash
 sudo certbot renew --dry-run
@@ -141,20 +141,12 @@ sudo certbot renew --dry-run
 
 ---
 
-## ✅ Success! You’ve Deployed a Secure Website with:
+## Success! You’ve Deployed a Secure Website with:
 
 - EC2 Hosting
 - Apache Web Server
 - Route 53 DNS
 - Namecheap Domain
 - HTTPS with Certbot
-
----
-
-### 🧩 Next Steps (Optional Ideas)
-
-- Automate deployment with GitHub Actions + EC2
-- Set up monitoring with CloudWatch
-- Add CI/CD using Jenkins or GitHub Actions
 
 ---
